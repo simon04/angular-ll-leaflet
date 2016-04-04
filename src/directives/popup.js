@@ -12,8 +12,11 @@
 
     function link(scope, element, attrs, llMarker, transclude) {
       transclude(function(popup) {
+        var elm = Array.prototype.filter.call(popup, function(i) {
+          return i.nodeType !== Node.TEXT_NODE;
+        })[0];
         llMarker.getMarker().then(function(marker) {
-          marker.bindPopup(popup[0]);
+          marker.bindPopup(elm);
         });
       });
       element.bind('$destroy', function() {

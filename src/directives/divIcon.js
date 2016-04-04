@@ -16,10 +16,9 @@
     function link(scope, element, attrs, llMarker, transclude) {
       transclude(function(html) {
         var options = scope.llDivIcon || {};
-        options.elm = html.filter(function() {
-          /* eslint-env browser */
-          return this.nodeType !== Node.TEXT_NODE;
-        }).first()[0];
+        options.elm = Array.prototype.filter.call(html, function(i) {
+          return i.nodeType !== Node.TEXT_NODE;
+        })[0];
         var icon = createIcon(options);
         llMarker.getMarker().then(function(marker) {
           marker.setIcon(icon);

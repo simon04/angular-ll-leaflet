@@ -3,5 +3,8 @@
     "angular": false,
     "L": false
   },
+  "env": {
+    "browser": true
+  },
   "extends": "google"
 }
