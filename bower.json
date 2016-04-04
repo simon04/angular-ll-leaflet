@@ -1,0 +1,22 @@
+{
+  "name": "angular-ll-leaflet",
+  "description": "Lightweight directives to use Leaflet with Angular",
+  "main": [
+    "src/index.js",
+    "src/directives/divIcon.js",
+    "src/directives/map.js",
+    "src/directives/marker.js",
+    "src/directives/popup.js",
+    "src/directives/view.js"
+  ],
+  "authors": [
+    "Simon Legner <Simon.Legner@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "dependencies": {
+    "angular": "1.x",
+    "leaflet": "0.7.x"
+  }
+}

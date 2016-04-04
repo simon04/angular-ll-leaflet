@@ -1,0 +1,14 @@
+{
+  "name": "angular-ll-leaflet",
+  "version": "0.1.0",
+  "description": "Lightweight directives to use Leaflet with Angular",
+  "author": "Simon Legner <Simon.Legner@gmail.com>",
+  "license": "ISC",
+  "scripts": {
+    "lint": "node_modules/.bin/eslint src/**"
+  },
+  "devDependencies": {
+    "eslint": "^2.6.0",
+    "eslint-config-google": "^0.4.0"
+  }
+}
