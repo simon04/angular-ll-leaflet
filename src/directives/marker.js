@@ -4,6 +4,7 @@
 
   function directive($q) {
     return {
+      restrict: 'E',
       scope: {
         llLatLng: '='
       },

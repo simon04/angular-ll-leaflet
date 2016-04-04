@@ -4,6 +4,7 @@
 
   function directive() {
     return {
+      restrict: 'E',
       transclude: true,
       require: '^llMarker',
       link: link

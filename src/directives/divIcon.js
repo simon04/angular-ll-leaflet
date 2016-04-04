@@ -4,17 +4,18 @@
 
   function directive() {
     return {
+      restrict: 'E',
       transclude: true,
       require: '^llMarker',
       scope: {
-        llDivIconOptions: '='
+        llDivIcon: '='
       },
       link: link
     };
 
     function link(scope, element, attrs, llMarker, transclude) {
       transclude(function(html) {
-        var options = scope.llDivIconOptions || {};
+        var options = scope.llDivIcon || {};
         options.elm = html[0];
         var icon = createIcon(options);
         llMarker.getMarker().then(function(marker) {

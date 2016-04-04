@@ -4,7 +4,9 @@
 
   function directive($q) {
     return {
+      restrict: 'A', // leaflet needs a <div>
       scope: {
+        llMap: '=',
         llInit: '&'
       },
       link: link,
@@ -12,7 +14,7 @@
     };
 
     function link(scope, element, attrs, ctrl) {
-      var map = new L.Map(element[0]);
+      var map = new L.Map(element[0], scope.llMap);
       ctrl._map.resolve(map);
       if (scope.llInit()) {
         scope.llInit()(L, map);
