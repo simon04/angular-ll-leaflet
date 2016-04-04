@@ -14,6 +14,7 @@
   ],
   "license": "ISC",
   "moduleType": [],
+  "ignore": [],
   "homepage": "",
   "dependencies": {
     "angular": "1.x",
