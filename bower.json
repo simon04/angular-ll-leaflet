@@ -1,6 +1,11 @@
 {
   "name": "angular-ll-leaflet",
-  "description": "Lightweight directives to use Leaflet with Angular",
+  "description": "Lightweight directives to use Leaflet with AngularJS",
+  "keywords": [
+    "angularjs",
+    "leaflet",
+    "maps"
+  ],
   "main": [
     "src/index.js",
     "src/directives/divIcon.js",

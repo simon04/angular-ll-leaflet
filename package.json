@@ -1,7 +1,7 @@
 {
   "name": "angular-ll-leaflet",
   "version": "0.1.0",
-  "description": "Lightweight directives to use Leaflet with Angular",
+  "description": "Lightweight directives to use Leaflet with AngularJS",
   "author": "Simon Legner <Simon.Legner@gmail.com>",
   "license": "ISC",
   "scripts": {
