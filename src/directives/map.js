@@ -1,8 +1,8 @@
 (function() {
   'use strict';
-  angular.module('ll-leaflet').directive('llMap', ['$q', directive]);
+  angular.module('ll-leaflet').directive('llMap', ['$q', '$parse', directive]);
 
-  function directive($q) {
+  function directive($q, $parse) {
     return {
       restrict: 'A', // leaflet needs a <div>
       scope: {
@@ -21,6 +21,20 @@
       }
       element.bind('$destroy', function() {
         map.remove();
+      });
+      [
+        'Click', 'Dblclick', 'Mousedown', 'Mouseover', 'Mouseout',
+        'Contextmenu', 'Add', 'Remove', 'Popupopen', 'Popupclose'
+      ].map(function(eventName) {
+        if (attrs['ll' + eventName]) {
+          var handler = $parse(attrs['ll' + eventName]);
+          map.on(eventName.toLowerCase(), function(event) {
+            scope.$apply(function() {
+              handler(scope.$parent, {$event: event});
+            });
+          });
+        }
+        return eventName;
       });
     }
 

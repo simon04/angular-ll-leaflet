@@ -2,7 +2,7 @@
 This project aims at providing a very lightweight [AngularJS](https://github.com/jbdemonte/angular-google-maps-native)-directive for the [Leaflet](http://leafletjs.com/) maps API.
 
 ## Directives
-* `<div ll-map>` – corresponds to `L.Map`
+* `<div ll-map>` – corresponds to `L.Map`, `ll-{click, dblclick, …}` bind to the map events
 * `<ll-view>` – corresponds to the current map view (lat, lng, zoom)
 * `<ll-marker>` – corresponds to a `L.Marker`
 * `<ll-div-icon>` – corresponds to a `L.DivIcon`, supports transclusion of the content
