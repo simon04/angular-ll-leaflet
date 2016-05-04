@@ -36,7 +36,7 @@
   <body data-ng-controller="Ctrl">
     <div ll-map="mapOptions" style="height: 400px" ll-click="clickEvent = $event">
       <ll-view ll-view="mapView"></ll-view>
-      <ll-marker ll-lat-lng="markerLatLng" ll-marker="{title: 'My first marker'}" ng-if="markerVisible">
+      <ll-marker ll-lat-lng="markerLatLng" ll-marker="{title: 'My first marker', draggable: true}" ng-if="markerVisible">
         <ll-popup><div>
           <b>{{greeting}}</b> – I am a popup.
         </div></ll-popup>
@@ -46,7 +46,7 @@
     <div>Map center: <input ng-model="mapView.lat"> <input ng-model="mapView.lng"></div>
     <div>Map zoom: <input ng-model="mapView.zoom"></div>
     <div>Map click: <code>{{clickEvent.latlng}}</code>
-    <div>Marker: <input type="checkbox" ng-model="markerVisible"></div>
+    <div>Marker: <input type="checkbox" ng-model="markerVisible"> <input ng-model="markerLatLng.lat"> <input ng-model="markerLatLng.lng"></div></div>
     <div>Greeting in popup: <input ng-model="greeting"></div>
   </body>
 </html>
