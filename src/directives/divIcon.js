@@ -19,23 +19,15 @@
         options.elm = Array.prototype.filter.call(html, function(i) {
           return i.nodeType !== Node.TEXT_NODE;
         })[0];
-        var icon = createIcon(options);
+        var icon = L.icon(options);
+        icon.createIcon = function() {
+          this._setIconStyles(this.options.elm, 'icon');
+          return this.options.elm;
+        };
         llMarker.getMarker().then(function(marker) {
           marker.setIcon(icon);
         });
       });
-    }
-
-    function createIcon(options) {
-      var MyIcon = L.Icon.extend({
-        options: {},
-        createIcon: function() {
-          this.options.elm = this.options.elm || document.createElement('div');
-          this._setIconStyles(this.options.elm, 'icon');
-          return this.options.elm;
-        }
-      });
-      return new MyIcon(options);
     }
   }
 })();
