@@ -23,8 +23,13 @@
         map.remove();
       });
       [
-        'Click', 'Dblclick', 'Mousedown', 'Mouseover', 'Mouseout',
-        'Contextmenu', 'Add', 'Remove', 'Popupopen', 'Popupclose'
+        'Click', 'Dblclick', 'Mousedown', 'Mouseup', 'Mouseover', 'Mouseout',
+        'Mousemove', 'Contextmenu', 'Focus', 'Blur', 'Preclick', 'Load',
+        'Unload', 'Viewreset', 'Movestart', 'Move', 'Moveend', 'Dragstart',
+        'Drag', 'Dragend', 'Zoomstart', 'Zoomend', 'Zoomlevelschange',
+        'Resize', 'Autopanstart', 'Layeradd', 'Layerremove',
+        'Baselayerchange', 'Overlayadd', 'Overlayremove', 'Locationfound',
+        'Locationerror', 'Popupopen', 'Popupclose'
       ].map(function(eventName) {
         if (attrs['ll' + eventName]) {
           var handler = $parse(attrs['ll' + eventName]);
