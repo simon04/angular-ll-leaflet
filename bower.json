@@ -1,5 +1,6 @@
 {
   "name": "angular-ll-leaflet",
+  "version": "0.2.0",
   "description": "Lightweight directives to use Leaflet with AngularJS",
   "keywords": [
     "angularjs",
