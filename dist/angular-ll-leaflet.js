@@ -1,6 +1,6 @@
 /**
  * Lightweight directives to use Leaflet with AngularJS
- * @version v0.2.0
+ * @version v0.2.1
  * @link https://github.com/simon04/angular-ll-leaflet
  * @license ISC
  */
