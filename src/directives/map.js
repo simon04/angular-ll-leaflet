@@ -1,6 +1,6 @@
-(function() {
-  'use strict';
-  angular.module('ll-leaflet').directive('llMap', ['$q', '$parse', directive]);
+  import L from 'leaflet';
+
+  export default ['$q', '$parse', directive];
 
   function directive($q, $parse) {
     return {
@@ -50,4 +50,3 @@
       };
     }
   }
-})();

@@ -1,6 +1,6 @@
-(function() {
-  'use strict';
-  angular.module('ll-leaflet').directive('llDivIcon', [directive]);
+  import L from 'leaflet';
+
+  export default [directive];
 
   function directive() {
     return {
@@ -30,4 +30,3 @@
       });
     }
   }
-})();

@@ -1,6 +1,7 @@
-(function() {
-  'use strict';
-  angular.module('ll-leaflet').directive('llMarker', ['$q', directive]);
+  import angular from 'angular';
+  import L from 'leaflet';
+
+  export default ['$q', directive];
 
   function directive($q) {
     return {
@@ -52,4 +53,3 @@
       };
     }
   }
-})();

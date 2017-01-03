@@ -11,6 +11,10 @@ This project aims at providing a very lightweight [AngularJS](https://github.com
 ## Demo?
 * https://cdn.rawgit.com/simon04/angular-ll-leaflet/master/demo/
 
+## Building
+* `yarn`
+* `npm run dist`
+
 ## Alternatives?
 * [ui-leaflet](https://github.com/angular-ui/ui-leaflet) – Feature rich, but as of version 1.0.0, it amounts to 80kB of glue code for a library of 120kB
 * [angular-google-maps-native](https://github.com/jbdemonte/angular-google-maps-native) – Nice, but for the Google Maps API

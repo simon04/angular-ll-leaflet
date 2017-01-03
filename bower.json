@@ -7,12 +7,7 @@
     "maps"
   ],
   "main": [
-    "src/index.js",
-    "src/directives/divIcon.js",
-    "src/directives/map.js",
-    "src/directives/marker.js",
-    "src/directives/popup.js",
-    "src/directives/view.js"
+    "dist/angular-ll-leaflet.js"
   ],
   "authors": [
     "Simon Legner <Simon.Legner@gmail.com>"
@@ -23,6 +18,6 @@
   "homepage": "",
   "dependencies": {
     "angular": "1.x",
-    "leaflet": "0.7.x"
+    "leaflet": "0.7.x || 1.x"
   }
 }

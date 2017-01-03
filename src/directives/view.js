@@ -1,6 +1,6 @@
-(function() {
-  'use strict';
-  angular.module('ll-leaflet').directive('llView', [directive]);
+  import angular from 'angular';
+
+  export default [directive];
 
   function directive() {
     return {
@@ -40,4 +40,3 @@
       });
     }
   }
-})();
