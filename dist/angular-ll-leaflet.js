@@ -1,6 +1,6 @@
 /**
  * Lightweight directives to use Leaflet with AngularJS
- * @version v0.2.1
+ * @version v0.2.2
  * @link https://github.com/simon04/angular-ll-leaflet
  * @license ISC
  */
@@ -78,7 +78,7 @@ var map = ['$q', '$parse', directive$1];
         if (attrs['ll' + eventName]) {
           var handler = $parse(attrs['ll' + eventName]);
           map.on(eventName.toLowerCase(), function(event) {
-            scope.$apply(function() {
+            scope.$applyAsync(function() {
               handler(scope.$parent, {$event: event});
             });
           });
@@ -123,7 +123,7 @@ var marker = ['$q', directive$2];
         }
       }, true);
       marker.on('dragend', function() {
-        scope.$apply(function() {
+        scope.$applyAsync(function() {
           if (angular.isArray(scope.llLatLng)) {
             scope.llLatLng[0] = marker.getLatLng().lat;
             scope.llLatLng[1] = marker.getLatLng().lng;

@@ -34,7 +34,7 @@
         if (attrs['ll' + eventName]) {
           var handler = $parse(attrs['ll' + eventName]);
           map.on(eventName.toLowerCase(), function(event) {
-            scope.$apply(function() {
+            scope.$applyAsync(function() {
               handler(scope.$parent, {$event: event});
             });
           });

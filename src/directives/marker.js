@@ -29,7 +29,7 @@
         }
       }, true);
       marker.on('dragend', function() {
-        scope.$apply(function() {
+        scope.$applyAsync(function() {
           if (angular.isArray(scope.llLatLng)) {
             scope.llLatLng[0] = marker.getLatLng().lat;
             scope.llLatLng[1] = marker.getLatLng().lng;
