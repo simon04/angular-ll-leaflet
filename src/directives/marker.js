@@ -1,9 +1,9 @@
   import angular from 'angular';
   import L from 'leaflet';
 
-  export default ['$q', directive];
+  export default ['$q', '$parse', directive];
 
-  function directive($q) {
+  function directive($q, $parse) {
     return {
       restrict: 'E',
       scope: {
@@ -39,6 +39,22 @@
           }
         });
       });
+      [
+        'Click', 'Dblclick', 'Mousedown', 'Mouseover', 'Mouseout',
+        'Contextmenu', 'Add', 'Remove', 'Popupopen', 'Popupclose',
+        'Tooltipopen', 'Tooltipclose'
+      ].map(function(eventName) {
+        if (attrs['ll' + eventName]) {
+          var handler = $parse(attrs['ll' + eventName]);
+          marker.on(eventName.toLowerCase(), function(event) {
+            scope.$applyAsync(function() {
+              handler(scope.$parent, {$event: event});
+            });
+          });
+        }
+        return eventName;
+      });
+
       element.bind('$destroy', function() {
         llMap.getMap().then(function(map) {
           map.removeLayer(marker);

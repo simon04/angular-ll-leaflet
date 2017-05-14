@@ -1,6 +1,6 @@
 /**
  * Lightweight directives to use Leaflet with AngularJS
- * @version v0.2.2
+ * @version v0.2.3
  * @link https://github.com/simon04/angular-ll-leaflet
  * @license ISC
  */
@@ -95,9 +95,9 @@ var map = ['$q', '$parse', directive$1];
     }
   }
 
-var marker = ['$q', directive$2];
+var marker = ['$q', '$parse', directive$2];
 
-  function directive$2($q) {
+  function directive$2($q, $parse) {
     return {
       restrict: 'E',
       scope: {
@@ -133,6 +133,22 @@ var marker = ['$q', directive$2];
           }
         });
       });
+      [
+        'Click', 'Dblclick', 'Mousedown', 'Mouseover', 'Mouseout',
+        'Contextmenu', 'Add', 'Remove', 'Popupopen', 'Popupclose',
+        'Tooltipopen', 'Tooltipclose'
+      ].map(function(eventName) {
+        if (attrs['ll' + eventName]) {
+          var handler = $parse(attrs['ll' + eventName]);
+          marker.on(eventName.toLowerCase(), function(event) {
+            scope.$applyAsync(function() {
+              handler(scope.$parent, {$event: event});
+            });
+          });
+        }
+        return eventName;
+      });
+
       element.bind('$destroy', function() {
         llMap.getMap().then(function(map) {
           map.removeLayer(marker);
