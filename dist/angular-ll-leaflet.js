@@ -1,6 +1,6 @@
 /**
  * Lightweight directives to use Leaflet with AngularJS
- * @version v0.2.3
+ * @version v0.3.0
  * @link https://github.com/simon04/angular-ll-leaflet
  * @license ISC
  */
@@ -44,9 +44,34 @@ var divIcon = [directive];
     }
   }
 
-var map = ['$q', '$parse', directive$1];
+var fitBounds = [directive$1];
 
-  function directive$1($q, $parse) {
+  function directive$1() {
+    return {
+      restrict: 'E',
+      scope: {
+        llBounds: '='
+      },
+      require: '^llMap',
+      link: link
+    };
+
+    function link(scope, element, attrs, llMap) {
+      llMap.getMap().then(function(map) {
+        scope.$watch('llBounds', modelChanged, true);
+
+        function modelChanged() {
+          if (scope.llBounds) {
+            map.fitBounds(scope.llBounds);
+          }
+        }
+      });
+    }
+  }
+
+var map = ['$q', '$parse', directive$2];
+
+  function directive$2($q, $parse) {
     return {
       restrict: 'A', // leaflet needs a <div>
       scope: {
@@ -95,9 +120,9 @@ var map = ['$q', '$parse', directive$1];
     }
   }
 
-var marker = ['$q', '$parse', directive$2];
+var marker = ['$q', '$parse', directive$3];
 
-  function directive$2($q, $parse) {
+  function directive$3($q, $parse) {
     return {
       restrict: 'E',
       scope: {
@@ -164,9 +189,9 @@ var marker = ['$q', '$parse', directive$2];
     }
   }
 
-var popup = [directive$3];
+var popup = [directive$4];
 
-  function directive$3() {
+  function directive$4() {
     return {
       restrict: 'E',
       transclude: true,
@@ -191,9 +216,9 @@ var popup = [directive$3];
     }
   }
 
-var view = [directive$4];
+var view = [directive$5];
 
-  function directive$4() {
+  function directive$5() {
     return {
       restrict: 'E',
       scope: {
@@ -234,6 +259,7 @@ var view = [directive$4];
 
 var index = angular.module('ll-leaflet', [])
   .directive('llDivIcon', divIcon)
+  .directive('llFitBounds', fitBounds)
   .directive('llMap', map)
   .directive('llMarker', marker)
   .directive('llPopup', popup)

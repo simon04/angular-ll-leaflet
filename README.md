@@ -4,6 +4,7 @@ This project aims at providing a very lightweight [AngularJS](https://github.com
 ## Directives
 * `<div ll-map>` – corresponds to `L.Map`, `ll-{click, dblclick, …}` bind to the map events
 * `<ll-view>` – corresponds to the current map view (lat, lng, zoom)
+* `<ll-fit-bounds ll-bounds="…">` – for modifying the [map view bounds](http://leafletjs.com/reference-1.0.3.html#map-fitbounds)
 * `<ll-marker>` – corresponds to a `L.Marker`
 * `<ll-div-icon>` – corresponds to a `L.DivIcon`, supports transclusion of the content
 * `<ll-popup>` – corresponds to a `L.Popup`, supports transclusion of the content
