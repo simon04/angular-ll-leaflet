@@ -1,6 +1,6 @@
 /**
  * Lightweight directives to use Leaflet with AngularJS
- * @version v0.3.0
+ * @version v0.3.1
  * @link https://github.com/simon04/angular-ll-leaflet
  * @license ISC
  */
@@ -159,6 +159,7 @@ var marker = ['$q', '$parse', directive$3];
         });
       });
       [
+        'Dragstart', 'Movestart', 'Drag', 'Dragend', 'Moveend',
         'Click', 'Dblclick', 'Mousedown', 'Mouseover', 'Mouseout',
         'Contextmenu', 'Add', 'Remove', 'Popupopen', 'Popupclose',
         'Tooltipopen', 'Tooltipclose'

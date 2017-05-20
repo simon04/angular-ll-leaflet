@@ -40,6 +40,7 @@
         });
       });
       [
+        'Dragstart', 'Movestart', 'Drag', 'Dragend', 'Moveend',
         'Click', 'Dblclick', 'Mousedown', 'Mouseover', 'Mouseout',
         'Contextmenu', 'Add', 'Remove', 'Popupopen', 'Popupclose',
         'Tooltipopen', 'Tooltipclose'
