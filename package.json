@@ -1,6 +1,6 @@
 {
   "name": "angular-ll-leaflet",
-  "version": "0.3.1",
+  "version": "1.0.0",
   "description": "Lightweight directives to use Leaflet with AngularJS",
   "homepage": "https://github.com/simon04/angular-ll-leaflet",
   "author": "Simon Legner <Simon.Legner@gmail.com>",
@@ -10,7 +10,7 @@
     "lint": "eslint src/**"
   },
   "main": "src/index.js",
-  "dependencies": {
+  "peerDependencies": {
     "angular": "1.x",
     "leaflet": "0.7.x || 1.x"
   },
